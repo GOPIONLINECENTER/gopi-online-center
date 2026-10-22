@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#e9eaff"
+    >
+
+    <title>Create Account | GOPI ONLINE CENTRE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Same Premium Design -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Registration Page Styles -->
+    <style>
+        .register-page-card {
+            max-width: 640px;
+        }
+
+        .register-page-card .form-header {
+            margin-bottom: 32px;
+        }
+
+        .register-page-card .input-shell {
+            height: 70px;
+            margin-bottom: 20px;
+        }
+
+        .register-page-card .primary-button {
+            margin-top: 12px;
+        }
+
+        .register-page-card .switch-account {
+            margin-top: 30px;
+        }
+
+        .terms-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 5px 0 24px;
+            color: #858eae;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .terms-row input {
+            width: 16px;
+            height: 16px;
+            margin-top: 3px;
+            flex-shrink: 0;
+            accent-color: #7830ff;
+            cursor: pointer;
+        }
+
+        .terms-row a {
+            color: #5934e9;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .terms-row a:hover {
+            text-decoration: underline;
+        }
+
+        .register-page-card .form-header h1 {
+            font-size: clamp(29px, 4vw, 40px);
+        }
+
+        @media (max-width: 480px) {
+            .register-page-card .input-shell {
+                height: 59px;
+                margin-bottom: 17px;
+            }
+
+            .register-page-card .form-header {
+                margin-bottom: 25px;
+            }
+
+            .terms-row {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background-scene">
+
+        <div class="ambient ambient-one"></div>
+        <div class="ambient ambient-two"></div>
+        <div class="ambient ambient-three"></div>
+
+        <div class="light-streak streak-one"></div>
+        <div class="light-streak streak-two"></div>
+
+        <div class="floating-orb orb-one"></div>
+        <div class="floating-orb orb-two"></div>
+        <div class="floating-orb orb-three"></div>
+
+        <div class="decorative-leaf leaf-top">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="decorative-leaf leaf-bottom">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+
+    <!-- Main Page -->
+    <main class="page-wrapper">
+
+        <section class="auth-card register-page-card">
+
+            <!-- Brand -->
+            <div class="brand-area">
+
+                <div class="brand-icon">
+                    <span class="brand-letter">G</span>
+                    <span class="brand-sparkle">✦</span>
+                </div>
+
+                <p class="brand-name">
+                    GOPI ONLINE CENTRE
+                </p>
+
+            </div>
+
+
+            <!-- Heading -->
+            <header class="form-header">
+
+                <h1>Create Account</h1>
+
+                <p>
+                    Create your account to get started
+                </p>
+
+            </header>
+
+
+            <!-- Registration Form -->
+            <form id="createAccountForm" novalidate>
+
+                <!-- Full Name -->
+                <div class="input-shell">
+
+                    <div class="input-icon">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="full_name"
+                        placeholder="Full Name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="input-shell">
+
+                    <div class="input-icon">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Gmail / Email Address"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Mobile -->
+                <div class="input-shell">
+
+                    <div class="input-icon">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        name="phone"
+                        placeholder="10-digit Mobile Number"
+                        autocomplete="tel"
+                        inputmode="numeric"
+                        maxlength="10"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="input-shell password-shell">
+
+                    <div class="input-icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create Password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        id="showPassword"
+                        aria-label="Show password"
+                        aria-pressed="false"
+                    >
+                        <i class="fa-regular fa-eye-slash"></i>
+                    </button>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+                <div class="input-shell password-shell">
+
+                    <div class="input-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirm_password"
+                        placeholder="Confirm Password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        id="showConfirmPassword"
+                        aria-label="Show confirm password"
+                        aria-pressed="false"
+                    >
+                        <i class="fa-regular fa-eye-slash"></i>
+                    </button>
+
+                </div>
+
+
+                <!-- Terms -->
+                <label class="terms-row">
+
+                    <input
+                        type="checkbox"
+                        id="acceptTerms"
+                        required
+                    >
+
+                    <span>
+                        I agree to the Terms of Service and Privacy Policy.
+                    </span>
+
+                </label>
+
+
+                <!-- Submit -->
+                <button
+                    type="submit"
+                    class="primary-button"
+                    id="createAccountButton"
+                >
+
+                    <span class="button-text">
+                        Create Account
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right button-arrow"></i>
+
+                    <span class="button-shine"></span>
+
+                </button>
+
+
+                <!-- Message -->
+                <p
+                    class="form-message"
+                    id="createAccountMessage"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+
+
+<!-- Email OTP Verification -->
+<div id="otpVerificationPanel" hidden>
+
+    <header class="form-header">
+        <h1>Verify Your Email</h1>
+        <p>Enter the 6-digit code sent to your email</p>
+    </header>
+
+    <form id="otpVerificationForm" novalidate>
+
+        <div class="input-shell">
+            <div class="input-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <input
+                type="text"
+                id="emailOtp"
+                name="emailOtp"
+                placeholder="Enter 6-digit OTP"
+                inputmode="numeric"
+                autocomplete="one-time-code"
+                maxlength="6"
+                pattern="[0-9]{6}"
+                required
+            >
+        </div>
+
+        <button
+            type="submit"
+            class="primary-button"
+            id="verifyOtpButton"
+        >
+            <span class="button-text">Verify Email</span>
+            <i class="fa-solid fa-arrow-right button-arrow"></i>
+            <span class="button-shine"></span>
+        </button>
+
+        <p
+            class="form-message"
+            id="otpMessage"
+            role="status"
+            aria-live="polite"
+        ></p>
+
+    </form>
+
+</div>
+
+            <!-- Login Link -->
+            <div class="switch-account">
+
+                <p>Already have an account?</p>
+
+                <a
+                    href="index.html"
+                    class="text-button switch-button"
+                    style="text-decoration: none;"
+                >
+                    Login
+                </a>
+
+            </div>
+
+
+            <!-- Footer -->
+            <footer class="card-footer">
+
+                <span class="footer-dot"></span>
+
+                <p>
+                    Secure Access · Premium Experience
+                </p>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <!-- Registration JavaScript -->
+    <script type="module" src="register.js"></script>
+
+</body>
+
+</html>

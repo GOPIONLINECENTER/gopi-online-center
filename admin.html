@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta name="theme-color" content="#f4f3ff">
+
+    <meta
+        name="description"
+        content="GOPI ONLINE SERVICE — Secure Administration Panel"
+    >
+
+    <title>Admin Control Center | GOPI ONLINE SERVICE</title>
+
+    <!-- Admin stylesheet -->
+    <link rel="stylesheet" href="./admin.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- ======================================
+         PREMIUM BACKGROUND
+    ======================================= -->
+
+    <div class="admin-background" aria-hidden="true">
+
+        <div class="admin-glow admin-glow-one"></div>
+
+        <div class="admin-glow admin-glow-two"></div>
+
+        <div class="admin-glow admin-glow-three"></div>
+
+        <div class="admin-grid-texture"></div>
+
+    </div>
+
+
+    <!-- ======================================
+         ADMIN APPLICATION
+    ======================================= -->
+
+    <div class="admin-layout">
+
+        <!-- ==================================
+             SIDEBAR
+        =================================== -->
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+            aria-label="Admin navigation"
+        >
+
+            <!-- Brand -->
+
+            <a href="./admin.html" class="admin-brand">
+
+                <div class="admin-brand-logo">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <div class="admin-brand-text">
+
+                    <span class="admin-brand-title">
+                        GOPI ONLINE
+                    </span>
+
+                    <span class="admin-brand-subtitle">
+                        SERVICE CENTER
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- Admin identity -->
+
+            <div class="admin-identity">
+
+                <div class="admin-identity-avatar">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div class="admin-identity-details">
+
+                    <strong>Administrator</strong>
+
+                    <span>
+                        <span class="admin-online-dot"></span>
+                        Control Center
+                    </span>
+
+                </div>
+
+                <span class="admin-verified-icon"
+                    title="Administrator area"
+                >
+                    <i class="fa-solid fa-circle-check"></i>
+                </span>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <div class="admin-sidebar-label">
+                WORKSPACE
+            </div>
+
+
+            <nav class="admin-navigation">
+
+                <button
+                    class="admin-nav-item active"
+                    type="button"
+                    data-admin-section="overview"
+                    aria-current="page"
+                >
+
+                    <span class="admin-nav-icon">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </span>
+
+                    <span class="admin-nav-text">
+                        Overview
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right admin-nav-arrow"></i>
+
+                </button>
+
+
+                <button
+                    class="admin-nav-item"
+                    type="button"
+                    data-admin-section="services"
+                >
+
+                    <span class="admin-nav-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </span>
+
+                    <span class="admin-nav-text">
+                        Services
+                    </span>
+
+                    <span
+                        class="admin-nav-badge"
+                        id="sidebarServicesCount"
+                    >
+                        —
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="admin-nav-item"
+                    type="button"
+                    data-admin-section="orders"
+                >
+
+                    <span class="admin-nav-icon">
+                        <i class="fa-solid fa-box-open"></i>
+                    </span>
+
+                    <span class="admin-nav-text">
+                        Orders
+                    </span>
+
+                    <span
+                        class="admin-nav-badge"
+                        id="sidebarOrdersCount"
+                    >
+                        —
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="admin-nav-item"
+                    type="button"
+                    data-admin-section="payments"
+                >
+
+                    <span class="admin-nav-icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </span>
+
+                    <span class="admin-nav-text">
+                        Payments
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="admin-nav-item"
+                    type="button"
+                    data-admin-section="customers"
+                >
+
+                    <span class="admin-nav-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </span>
+
+                    <span class="admin-nav-text">
+                        Customers
+                    </span>
+
+                </button>
+
+
+                <div class="admin-sidebar-divider"></div>
+
+
+                <div class="admin-sidebar-label">
+                    SYSTEM
+                </div>
+
+
+                <button
+                    class="admin-nav-item"
+                    type="button"
+                    data-admin-section="notifications"
+                >
+
+                    <span class="admin-nav-icon">
+                        <i class="fa-regular fa-bell"></i>
+                    </span>
+
+                    <span class="admin-nav-text">
+                        Notifications
+                    </span>
+
+                    <span
+                        class="admin-nav-badge"
+                        id="adminNotificationCount"
+                    >
+                        0
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="admin-nav-item"
+                    type="button"
+                    data-admin-section="settings"
+                >
+
+                    <span class="admin-nav-icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
+
+                    <span class="admin-nav-text">
+                        Settings
+                    </span>
+
+                </button>
+
+            </nav>
+
+
+            <!-- Sidebar bottom -->
+
+            <div class="admin-sidebar-bottom">
+
+                <div class="admin-sidebar-support">
+
+                    <div class="admin-support-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                    <h3>Need Assistance?</h3>
+
+                    <p>
+                        Keep your service center running smoothly.
+                    </p>
+
+                    <a
+                        href="tel:9609047478"
+                        class="admin-support-link"
+                    >
+                        Contact Support
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </div>
+
+
+                <button
+                    class="admin-logout-button"
+                    id="adminLogoutButton"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Sign Out</span>
+
+                </button>
+
+
+                <div class="admin-sidebar-footer">
+                    <span>GOPI ONLINE SERVICE</span>
+                    <span>Administration</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Mobile sidebar overlay -->
+
+        <div
+            class="admin-sidebar-overlay"
+            id="adminSidebarOverlay"
+        ></div>
+
+
+        <!-- ==================================
+             MAIN AREA
+        =================================== -->
+
+        <main class="admin-main">
+
+
+            <!-- ==================================
+                 TOPBAR
+            =================================== -->
+
+            <header class="admin-topbar">
+
+                <div class="admin-topbar-left">
+
+                    <button
+                        class="admin-menu-toggle"
+                        id="adminMenuToggle"
+                        type="button"
+                        aria-label="Toggle sidebar"
+                        aria-controls="adminSidebar"
+                        aria-expanded="false"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+
+                    <div class="admin-page-heading">
+
+                        <div class="admin-breadcrumb">
+                            <span>Workspace</span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                            <span id="adminBreadcrumbCurrent">
+                                Overview
+                            </span>
+                        </div>
+
+                        <h1 id="adminPageTitle">
+                            Admin Overview
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-topbar-right">
+
+                    <!-- Refresh -->
+
+                    <button
+                        class="admin-icon-button"
+                        id="adminRefreshButton"
+                        type="button"
+                        aria-label="Refresh dashboard data"
+                        title="Refresh data"
+                    >
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </button>
+
+
+                    <!-- Notifications -->
+
+                    <button
+                        class="admin-icon-button admin-notification-button"
+                        id="adminNotificationButton"
+                        type="button"
+                        data-admin-section="notifications"
+                        aria-label="Open notifications"
+                    >
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span
+                            class="admin-notification-indicator"
+                            id="adminNotificationIndicator"
+                            hidden
+                        ></span>
+
+                    </button>
+
+
+                    <div class="admin-topbar-divider"></div>
+
+
+                    <!-- Admin profile -->
+
+                    <div class="admin-topbar-profile">
+
+                        <div class="admin-topbar-avatar">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+
+                        <div class="admin-topbar-user">
+
+                            <strong id="adminAccountName">
+                                Administrator
+                            </strong>
+
+                            <span id="adminAccountEmail">
+                                Verifying account...
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down admin-profile-chevron"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ==================================
+                 PAGE CONTENT
+            =================================== -->
+
+            <div class="admin-content">
+
+
+                <!-- Global message -->
+
+                <div
+                    class="admin-message"
+                    id="adminGlobalMessage"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                ></div>
+
+
+                <!-- Loading state -->
+
+                <div
+                    class="admin-loading"
+                    id="adminLoading"
+                    role="status"
+                    aria-live="polite"
+                >
+
+                    <div class="admin-loading-spinner"></div>
+
+                    <strong>Preparing your Control Center</strong>
+
+                    <p>
+                        Verifying access and loading your data...
+                    </p>
+
+                </div>
+
+
+                <!-- ==================================
+                     OVERVIEW
+                =================================== -->
+
+                <section
+                    class="admin-section active"
+                    id="adminOverviewSection"
+                    data-section-title="Overview"
+                >
+
+                    <!-- Welcome banner -->
+
+                    <div class="admin-welcome-banner">
+
+                        <div class="admin-welcome-content">
+
+                            <span class="admin-welcome-eyebrow">
+
+                                <i class="fa-solid fa-sparkles"></i>
+
+                                ADMINISTRATION CONTROL CENTER
+
+                            </span>
+
+
+                            <h2>
+                                Welcome back,
+                                <span id="adminWelcomeName">
+                                    Admin
+                                </span>
+                            </h2>
+
+
+                            <p>
+                                Manage your services, monitor orders,
+                                and keep your service center running
+                                smoothly from one place.
+                            </p>
+
+
+                            <div class="admin-welcome-meta">
+
+                                <span class="admin-status-pill">
+
+                                    <span class="admin-online-dot"></span>
+
+                                    Admin Workspace
+
+                                </span>
+
+                                <span class="admin-welcome-date"
+                                    id="adminCurrentDate"
+                                >
+                                    Loading date...
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="admin-welcome-illustration"
+                            aria-hidden="true"
+                        >
+
+                            <div class="admin-illustration-orbit orbit-one"></div>
+
+                            <div class="admin-illustration-orbit orbit-two"></div>
+
+                            <div class="admin-illustration-circle">
+
+                                <i class="fa-solid fa-bolt"></i>
+
+                            </div>
+
+
+                            <div class="admin-floating-icon floating-one">
+
+                                <i class="fa-solid fa-chart-line"></i>
+
+                            </div>
+
+
+                            <div class="admin-floating-icon floating-two">
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                            </div>
+
+
+                            <div class="admin-floating-icon floating-three">
+
+                                <i class="fa-solid fa-layer-group"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Section heading -->
+
+                    <div class="admin-section-heading">
+
+                        <div>
+
+                            <span class="admin-section-eyebrow">
+                                BUSINESS AT A GLANCE
+                            </span>
+
+                            <h2>Performance Overview</h2>
+
+                            <p>
+                                A quick summary of your current database records.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="admin-secondary-button"
+                            id="adminOverviewRefresh"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-arrows-rotate"></i>
+
+                            Refresh Overview
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Statistics -->
+
+                    <div class="admin-stats-grid">
+
+
+                        <!-- Services -->
+
+                        <article class="admin-stat-card stat-purple">
+
+                            <div class="admin-stat-top">
+
+                                <div class="admin-stat-icon">
+
+                                    <i class="fa-solid fa-layer-group"></i>
+
+                                </div>
+
+                                <span class="admin-stat-label">
+                                    SERVICES
+                                </span>
+
+                            </div>
+
+
+                            <div class="admin-stat-value-row">
+
+                                <h3 id="statTotalServices">—</h3>
+
+                                <span class="admin-stat-trend">
+                                    <i class="fa-solid fa-database"></i>
+                                    Records
+                                </span>
+
+                            </div>
+
+
+                            <p>Total services in database</p>
+
+
+                            <button
+                                class="admin-stat-link"
+                                type="button"
+                                data-admin-section="services"
+                            >
+
+                                Manage services
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+                        </article>
+
+
+                        <!-- Orders -->
+
+                        <article class="admin-stat-card stat-blue">
+
+                            <div class="admin-stat-top">
+
+                                <div class="admin-stat-icon">
+
+                                    <i class="fa-solid fa-box-open"></i>
+
+                                </div>
+
+                                <span class="admin-stat-label">
+                                    ORDERS
+                                </span>
+
+                            </div>
+
+
+                            <div class="admin-stat-value-row">
+
+                                <h3 id="statTotalOrders">—</h3>
+
+                                <span class="admin-stat-trend">
+                                    <i class="fa-solid fa-database"></i>
+                                    Records
+                                </span>
+
+                            </div>
+
+
+                            <p>Total orders in database</p>
+
+
+                            <button
+                                class="admin-stat-link"
+                                type="button"
+                                data-admin-section="orders"
+                            >
+
+                                View orders
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+                        </article>
+
+
+                        <!-- Payments -->
+
+                        <article class="admin-stat-card stat-cyan">
+
+                            <div class="admin-stat-top">
+
+                                <div class="admin-stat-icon">
+
+                                    <i class="fa-solid fa-wallet"></i>
+
+                                </div>
+
+                                <span class="admin-stat-label">
+                                    PAYMENTS
+                                </span>
+
+                            </div>
+
+
+                            <div class="admin-stat-value-row">
+
+                                <h3 id="statTotalPayments">—</h3>
+
+                                <span class="admin-stat-trend">
+                                    <i class="fa-solid fa-database"></i>
+                                    Records
+                                </span>
+
+                            </div>
+
+
+                            <p>Total payment records</p>
+
+
+                            <button
+                                class="admin-stat-link"
+                                type="button"
+                                data-admin-section="payments"
+                            >
+
+                                View payments
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+                        </article>
+
+
+                        <!-- Active services -->
+
+                        <article class="admin-stat-card stat-green">
+
+                            <div class="admin-stat-top">
+
+                                <div class="admin-stat-icon">
+
+                                    <i class="fa-solid fa-circle-check"></i>
+
+                                </div>
+
+                                <span class="admin-stat-label">
+                                    ACTIVE
+                                </span>
+
+                            </div>
+
+
+                            <div class="admin-stat-value-row">
+
+                                <h3 id="statActiveServices">—</h3>
+
+                                <span class="admin-stat-trend">
+                                    <i class="fa-solid fa-bolt"></i>
+                                    Live
+                                </span>
+
+                            </div>
+
+
+                            <p>Currently active services</p>
+
+
+                            <button
+                                class="admin-stat-link"
+                                type="button"
+                                data-admin-section="services"
+                            >
+
+                                Manage availability
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- Secondary information -->
+
+                    <div class="admin-overview-grid">
+
+
+                        <!-- Service status -->
+
+                        <article class="admin-panel-card">
+
+                            <div class="admin-panel-card-heading">
+
+                                <div>
+
+                                    <span class="admin-section-eyebrow">
+                                        SERVICE CENTER
+                                    </span>
+
+                                    <h3>Service Status</h3>
+
+                                </div>
+
+                                <span class="admin-panel-heading-icon">
+                                    <i class="fa-solid fa-chart-simple"></i>
+                                </span>
+
+                            </div>
+
+
+                            <div class="admin-status-summary">
+
+                                <div class="admin-status-summary-item">
+
+                                    <div class="admin-status-summary-icon status-icon-green">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <span>Active Services</span>
+
+                                        <strong id="overviewActiveServices">—</strong>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="admin-status-summary-item">
+
+                                    <div class="admin-status-summary-icon status-icon-orange">
+                                        <i class="fa-solid fa-circle-pause"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <span>Inactive Services</span>
+
+                                        <strong id="overviewInactiveServices">—</strong>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                class="admin-outline-button"
+                                type="button"
+                                data-admin-section="services"
+                            >
+
+                                Open Service Management
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+                        </article>
+
+
+                        <!-- Database status -->
+
+                        <article class="admin-panel-card">
+
+                            <div class="admin-panel-card-heading">
+
+                                <div>
+
+                                    <span class="admin-section-eyebrow">
+                                        SYSTEM HEALTH
+                                    </span>
+
+                                    <h3>Database Connection</h3>
+
+                                </div>
+
+                                <span class="admin-panel-heading-icon">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </span>
+
+                            </div>
+
+
+                            <div class="admin-database-status">
+
+                                <div
+                                    class="admin-database-indicator"
+                                    id="adminDatabaseIndicator"
+                                >
+
+                                    <span></span>
+
+                                </div>
+
+
+                                <div class="admin-database-details">
+
+                                    <strong id="adminDatabaseStatus">
+                                        Checking connection...
+                                    </strong>
+
+                                    <p id="adminDatabaseDescription">
+                                        Waiting for Supabase verification.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="admin-database-footer">
+
+                                <span>
+                                    <i class="fa-solid fa-lock"></i>
+                                    Protected session
+                                </span>
+
+                                <span id="adminLastRefresh">
+                                    Not refreshed yet
+                                </span>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- Recent orders -->
+
+                    <div class="admin-section-heading admin-section-heading-spaced">
+
+                        <div>
+
+                            <span class="admin-section-eyebrow">
+                                LATEST ACTIVITY
+                            </span>
+
+                            <h2>Recent Orders</h2>
+
+                            <p>
+                                The latest orders available to your admin account.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="admin-text-button"
+                            type="button"
+                            data-admin-section="orders"
+                        >
+
+                            View all orders
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="admin-table-card">
+
+                        <div class="admin-table-responsive">
+
+                            <table class="admin-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>ORDER NUMBER</th>
+
+                                        <th>CUSTOMER ID</th>
+
+                                        <th>SERVICE</th>
+
+                                        <th>ORDER ID</th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="adminRecentOrdersBody">
+
+                                    <tr>
+
+                                        <td colspan="4" class="admin-empty-cell">
+
+                                            <i class="fa-solid fa-box-open"></i>
+
+                                            <span>
+                                                Orders will appear here when available.
+                                            </span>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================
+                     SERVICES
+                =================================== -->
+
+                <section
+                    class="admin-section"
+                    id="adminServicesSection"
+                    data-section-title="Services"
+                    hidden
+                >
+
+                    <div class="admin-section-heading">
+
+                        <div>
+
+                            <span class="admin-section-eyebrow">
+                                SERVICE CATALOG
+                            </span>
+
+                            <h2>Service Management</h2>
+
+                            <p>
+                                Manage the services offered by your service center.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="admin-primary-button"
+                            id="addServiceButton"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Add New Service
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Service summary -->
+
+                    <div class="admin-inline-stats">
+
+                        <div class="admin-inline-stat">
+
+                            <span class="admin-inline-stat-icon purple-icon">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Total Services</span>
+
+                                <strong id="servicesPageTotal">—</strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-inline-stat">
+
+                            <span class="admin-inline-stat-icon green-icon">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Active</span>
+
+                                <strong id="servicesPageActive">—</strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-inline-stat">
+
+                            <span class="admin-inline-stat-icon orange-icon">
+                                <i class="fa-solid fa-circle-pause"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Inactive</span>
+
+                                <strong id="servicesPageInactive">—</strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Search -->
+
+                    <div class="admin-toolbar">
+
+                        <div class="admin-search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="search"
+                                id="serviceSearch"
+                                placeholder="Search services by name..."
+                                aria-label="Search services"
+                            >
+
+                        </div>
+
+
+                        <select
+                            class="admin-select"
+                            id="serviceStatusFilter"
+                            aria-label="Filter services by status"
+                        >
+
+                            <option value="all">All services</option>
+
+                            <option value="active">Active only</option>
+
+                            <option value="inactive">Inactive only</option>
+
+                        </select>
+
+
+                        <button
+                            class="admin-secondary-button"
+                            id="refreshServicesButton"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-arrows-rotate"></i>
+
+                            Refresh
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Services table -->
+
+                    <div class="admin-table-card">
+
+                        <div class="admin-table-card-heading">
+
+                            <div>
+
+                                <h3>All Services</h3>
+
+                                <p>
+                                    Services stored in your Supabase database.
+                                </p>
+
+                            </div>
+
+
+                            <span
+                                class="admin-record-count"
+                                id="servicesRecordCount"
+                            >
+                                Loading...
+                            </span>
+
+                        </div>
+
+
+                        <div class="admin-table-responsive">
+
+                            <table class="admin-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>SERVICE</th>
+
+                                        <th>DESCRIPTION</th>
+
+                                        <th>PRICE</th>
+
+                                        <th>STATUS</th>
+
+                                        <th>CREATED</th>
+
+                                        <th>ACTIONS</th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="adminServicesBody">
+
+                                    <tr>
+
+                                        <td colspan="6" class="admin-empty-cell">
+
+                                            <div class="admin-table-loader"></div>
+
+                                            <span>
+                                                Loading services...
+                                            </span>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================
+                     ORDERS
+                =================================== -->
+
+                <section
+                    class="admin-section"
+                    id="adminOrdersSection"
+                    data-section-title="Orders"
+                    hidden
+                >
+
+                    <div class="admin-section-heading">
+
+                        <div>
+
+                            <span class="admin-section-eyebrow">
+                                ORDER MANAGEMENT
+                            </span>
+
+                            <h2>All Orders</h2>
+
+                            <p>
+                                Review orders that are visible to your authorized account.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="admin-secondary-button"
+                            id="refreshOrdersButton"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-arrows-rotate"></i>
+
+                            Refresh Orders
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="admin-inline-stats">
+
+                        <div class="admin-inline-stat">
+
+                            <span class="admin-inline-stat-icon purple-icon">
+                                <i class="fa-solid fa-box"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Total Orders</span>
+
+                                <strong id="ordersPageTotal">—</strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-inline-stat">
+
+                            <span class="admin-inline-stat-icon blue-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Customer References</span>
+
+                                <strong id="ordersPageCustomers">—</strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-toolbar">
+
+                        <div class="admin-search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="search"
+                                id="orderSearch"
+                                placeholder="Search order number, service or user ID..."
+                                aria-label="Search orders"
+                            >
+
+                        </div>
+
+
+                        <button
+                            class="admin-secondary-button"
+                            id="exportOrdersButton"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-download"></i>
+
+                            Export CSV
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="admin-table-card">
+
+                        <div class="admin-table-card-heading">
+
+                            <div>
+
+                                <h3>Order Records</h3>
+
+                                <p>
+                                    Data shown according to Supabase access policies.
+                                </p>
+
+                            </div>
+
+
+                            <span
+                                class="admin-record-count"
+                                id="ordersRecordCount"
+                            >
+                                Loading...
+                            </span>
+
+                        </div>
+
+
+                        <div class="admin-table-responsive">
+
+                            <table class="admin-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>ORDER NUMBER</th>
+
+                                        <th>USER ID</th>
+
+                                        <th>SERVICE</th>
+
+                                        <th>ORDER ID</th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="adminOrdersBody">
+
+                                    <tr>
+
+                                        <td colspan="4" class="admin-empty-cell">
+
+                                            <div class="admin-table-loader"></div>
+
+                                            <span>
+                                                Loading orders...
+                                            </span>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================
+                     PAYMENTS
+                =================================== -->
+
+                <section
+                    class="admin-section"
+                    id="adminPaymentsSection"
+                    data-section-title="Payments"
+                    hidden
+                >
+
+                    <div class="admin-section-heading">
+
+                        <div>
+
+                            <span class="admin-section-eyebrow">
+                                PAYMENT RECORDS
+                            </span>
+
+                            <h2>Payment Management</h2>
+
+                            <p>
+                                Review payment records available through your database policies.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="admin-secondary-button"
+                            id="refreshPaymentsButton"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-arrows-rotate"></i>
+
+                            Refresh Payments
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="admin-inline-stats">
+
+                        <div class="admin-inline-stat">
+
+                            <span class="admin-inline-stat-icon purple-icon">
+                                <i class="fa-solid fa-wallet"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Payment Records</span>
+
+                                <strong id="paymentsPageTotal">—</strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-inline-stat">
+
+                            <span class="admin-inline-stat-icon green-icon">
+                                <i class="fa-solid fa-indian-rupee-sign"></i>
+                            </span>
+
+                            <div>
+
+                                <span>Total Recorded Amount</span>
+
+                                <strong id="paymentsPageAmount">—</strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-toolbar">
+
+                        <div class="admin-search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="search"
+                                id="paymentSearch"
+                                placeholder="Search by order ID or user ID..."
+                                aria-label="Search payments"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-table-card">
+
+                        <div class="admin-table-card-heading">
+
+                            <div>
+
+                                <h3>Payment Records</h3>
+
+                                <p>
+                                    Payment information retrieved from Supabase.
+                                </p>
+
+                            </div>
+
+
+                            <span
+                                class="admin-record-count"
+                                id="paymentsRecordCount"
+                            >
+                                Loading...
+                            </span>
+
+                        </div>
+
+
+                        <div class="admin-table-responsive">
+
+                            <table class="admin-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>PAYMENT ID</th>
+
+                                        <th>ORDER ID</th>
+
+                                        <th>USER ID</th>
+
+                                        <th>AMOUNT</th>
+
+                                        <th>PAYMENT DETAILS</th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="adminPaymentsBody">
+
+                                    <tr>
+
+                                        <td colspan="5" class="admin-empty-cell">
+
+                                            <div class="admin-table-loader"></div>
+
+                                            <span>
+                                                Loading payments...
+                                            </span>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================
+                     CUSTOMERS
+                =================================== -->
+
+                <section
+                    class="admin-section"
+                    id="adminCustomersSection"
+                    data-section-title="Customers"
+                    hidden
+                >
+
+                    <div class="admin-section-heading">
+
+                        <div>
+
+                            <span class="admin-section-eyebrow">
+                                CUSTOMER INFORMATION
+                            </span>
+
+                            <h2>Customers</h2>
+
+                            <p>
+                                Review customer references associated with visible orders.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="admin-secondary-button"
+                            id="refreshCustomersButton"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-arrows-rotate"></i>
+
+                            Refresh
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="admin-notice">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <p>
+                            Customer details are shown only when available
+                            through your authorized database access.
+                            Authentication user records cannot be listed
+                            directly from the browser using the public key.
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-toolbar">
+
+                        <div class="admin-search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="search"
+                                id="customerSearch"
+                                placeholder="Search customer user ID..."
+                                aria-label="Search customers"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-table-card">
+
+                        <div class="admin-table-card-heading">
+
+                            <div>
+
+                                <h3>Customer References</h3>
+
+                                <p>
+                                    Customers referenced by accessible orders.
+                                </p>
+
+                            </div>
+
+
+                            <span
+                                class="admin-record-count"
+                                id="customersRecordCount"
+                            >
+                                Loading...
+                            </span>
+
+                        </div>
+
+
+                        <div class="admin-table-responsive">
+
+                            <table class="admin-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>CUSTOMER USER ID</th>
+
+                                        <th>ORDERS</th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="adminCustomersBody">
+
+                                    <tr>
+
+                                        <td colspan="2" class="admin-empty-cell">
+
+                                            <span>
+                                                Customer information will appear here.
+                                            </span>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================
+                     NOTIFICATIONS
+                =================================== -->
+
+                <section
+                    class="admin-section"
+                    id="adminNotificationsSection"
+                    data-section-title="Notifications"
+                    hidden
+                >
+
+                    <div class="admin-section-heading">
+
+                        <div>
+
+                            <span class="admin-section-eyebrow">
+                                SYSTEM UPDATES
+                            </span>
+
+                            <h2>Notifications</h2>
+
+                            <p>
+                                Important messages about your administration workspace.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-notification-list" id="adminNotificationsList">
+
+                        <article class="admin-notification-card">
+
+                            <div class="admin-notification-icon notification-purple">
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                            </div>
+
+
+                            <div class="admin-notification-content">
+
+                                <h3>Admin security</h3>
+
+                                <p>
+                                    Admin access depends on a valid session
+                                    and the permissions configured in Supabase.
+                                </p>
+
+                                <span>
+                                    System information
+                                </span>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="admin-notification-card">
+
+                            <div class="admin-notification-icon notification-blue">
+
+                                <i class="fa-solid fa-database"></i>
+
+                            </div>
+
+
+                            <div class="admin-notification-content">
+
+                                <h3>Database connectivity</h3>
+
+                                <p>
+                                    Table data is available according to
+                                    your current database permissions.
+                                </p>
+
+                                <span>
+                                    System information
+                                </span>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================
+                     SETTINGS
+                =================================== -->
+
+                <section
+                    class="admin-section"
+                    id="adminSettingsSection"
+                    data-section-title="Settings"
+                    hidden
+                >
+
+                    <div class="admin-section-heading">
+
+                        <div>
+
+                            <span class="admin-section-eyebrow">
+                                WORKSPACE PREFERENCES
+                            </span>
+
+                            <h2>Settings</h2>
+
+                            <p>
+                                Administration workspace information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-panel-card admin-settings-card">
+
+                        <div class="admin-panel-card-heading">
+
+                            <div>
+
+                                <span class="admin-section-eyebrow">
+                                    ACCOUNT
+                                </span>
+
+                                <h3>Administrator Account</h3>
+
+                            </div>
+
+                            <span class="admin-panel-heading-icon">
+
+                                <i class="fa-solid fa-user-shield"></i>
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="admin-settings-row">
+
+                            <span>Account Email</span>
+
+                            <strong id="settingsAdminEmail">
+                                Verifying...
+                            </strong>
+
+                        </div>
+
+
+                        <div class="admin-settings-row">
+
+                            <span>Authentication</span>
+
+                            <strong id="settingsAuthStatus">
+                                Checking...
+                            </strong>
+
+                        </div>
+
+
+                        <div class="admin-settings-row">
+
+                            <span>Supabase Project</span>
+
+                            <strong>
+                                Connected client
+                            </strong>
+
+                        </div>
+
+
+                        <button
+                            class="admin-danger-button"
+                            id="settingsLogoutButton"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-right-from-bracket"></i>
+
+                            Sign Out
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================
+                     FOOTER
+                =================================== -->
+
+                <footer class="admin-footer">
+
+                    <div>
+
+                        <span class="admin-footer-brand">
+                            GOPI ONLINE SERVICE
+                        </span>
+
+                        <p>
+                            © <span id="adminCurrentYear"></span>
+                            All rights reserved.
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-footer-right">
+
+                        <span>
+                            <i class="fa-solid fa-shield-halved"></i>
+                            Administration Workspace
+                        </span>
+
+                        <span class="admin-footer-heart">
+
+                            Made with
+
+                            <i class="fa-solid fa-heart"></i>
+
+                        </span>
+
+                    </div>
+
+                </footer>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- ======================================
+         SERVICE CREATE / EDIT MODAL
+    ======================================= -->
+
+    <div
+        class="admin-modal-backdrop"
+        id="serviceEditorModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="serviceEditorTitle"
+        hidden
+    >
+
+        <div class="admin-modal-card">
+
+            <div class="admin-modal-header">
+
+                <div>
+
+                    <span class="admin-section-eyebrow">
+                        SERVICE CATALOG
+                    </span>
+
+                    <h2 id="serviceEditorTitle">
+                        Add New Service
+                    </h2>
+
+                    <p>
+                        Update your service information.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="admin-modal-close"
+                    id="closeServiceEditor"
+                    type="button"
+                    aria-label="Close service editor"
+                >
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <form id="serviceEditorForm">
+
+                <input
+                    type="hidden"
+                    id="serviceEditorId"
+                >
+
+
+                <div class="admin-form-group">
+
+                    <label for="serviceEditorName">
+                        Service Name
+                    </label>
+
+                    <input
+                        id="serviceEditorName"
+                        name="name"
+                        type="text"
+                        maxlength="120"
+                        placeholder="Enter service name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label for="serviceEditorDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="serviceEditorDescription"
+                        name="description"
+                        rows="4"
+                        maxlength="1000"
+                        placeholder="Describe the service"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label for="serviceEditorPrice">
+                        Price (₹)
+                    </label>
+
+                    <input
+                        id="serviceEditorPrice"
+                        name="price"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        placeholder="Enter service price"
+                        required
+                    >
+
+                </div>
+
+
+                <label class="admin-switch-row">
+
+                    <span class="admin-switch-label">
+
+                        <strong>Service Availability</strong>
+
+                        <span>
+                            Make this service available to customers.
+                        </span>
+
+                    </span>
+
+
+                    <input
+                        id="serviceEditorActive"
+                        type="checkbox"
+                        checked
+                    >
+
+                    <span class="admin-switch-control"></span>
+
+                </label>
+
+
+                <div class="admin-modal-actions">
+
+                    <button
+                        class="admin-secondary-button"
+                        id="cancelServiceEditor"
+                        type="button"
+                    >
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        class="admin-primary-button"
+                        id="saveServiceButton"
+                        type="submit"
+                    >
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Save Service
+
+                    </button>
+
+                </div>
+
+
+                <p
+                    class="admin-form-message"
+                    id="serviceEditorMessage"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                ></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================================
+         DELETE CONFIRMATION MODAL
+    ======================================= -->
+
+    <div
+        class="admin-modal-backdrop"
+        id="adminConfirmModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="adminConfirmTitle"
+        hidden
+    >
+
+        <div class="admin-confirm-card">
+
+            <div class="admin-confirm-icon">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+            </div>
+
+
+            <h2 id="adminConfirmTitle">
+                Confirm Action
+            </h2>
+
+
+            <p id="adminConfirmMessage">
+                Are you sure you want to continue?
+            </p>
+
+
+            <div class="admin-modal-actions">
+
+                <button
+                    class="admin-secondary-button"
+                    id="cancelAdminConfirm"
+                    type="button"
+                >
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    class="admin-danger-button"
+                    id="acceptAdminConfirm"
+                    type="button"
+                >
+
+                    Confirm
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================================
+         JAVASCRIPT
+    ======================================= -->
+
+    <script type="module" src="./admin.js"></script>
+
+</body>
+</html>

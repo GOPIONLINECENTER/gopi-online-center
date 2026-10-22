@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#e9eaff"
+    >
+
+    <meta
+        name="description"
+        content="GOPI ONLINE CENTRE - Secure and premium online services."
+    >
+
+    <title>GOPI ONLINE CENTRE | Login</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background-scene">
+
+        <div class="ambient ambient-one"></div>
+        <div class="ambient ambient-two"></div>
+        <div class="ambient ambient-three"></div>
+
+        <div class="light-streak streak-one"></div>
+        <div class="light-streak streak-two"></div>
+
+        <div class="floating-orb orb-one"></div>
+        <div class="floating-orb orb-two"></div>
+        <div class="floating-orb orb-three"></div>
+
+        <div class="decorative-leaf leaf-top">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="decorative-leaf leaf-bottom">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+
+    <!-- Main Page -->
+    <main class="page-wrapper">
+
+        <!-- Authentication Card -->
+        <section class="auth-card" id="authCard">
+
+            <!-- Brand -->
+            <div class="brand-area">
+
+                <div class="brand-icon">
+                    <span class="brand-letter">G</span>
+                    <span class="brand-sparkle">✦</span>
+                </div>
+
+                <p class="brand-name">GOPI ONLINE CENTRE</p>
+
+            </div>
+
+
+            <!-- LOGIN PANEL -->
+            <div class="form-panel active" id="loginPanel">
+
+                <header class="form-header">
+
+                    <h1>Welcome Back</h1>
+
+                    <p>
+                        Login to continue to your account
+                    </p>
+
+                </header>
+
+
+                <form id="loginForm" novalidate>
+
+                    <!-- Email -->
+                    <div class="input-shell">
+
+                        <div class="input-icon">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+
+                        <input
+                            type="text"
+                            id="loginEmail"
+                            name="email"
+                            placeholder="Email or Username"
+                            autocomplete="username"
+                            aria-label="Email or Username"
+                            required
+                        >
+
+                        <span class="input-focus-glow"></span>
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="input-shell password-shell">
+
+                        <div class="input-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            placeholder="Password"
+                            autocomplete="current-password"
+                            aria-label="Password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="toggleLoginPassword"
+                            aria-label="Show password"
+                            aria-pressed="false"
+                        >
+                            <i class="fa-regular fa-eye-slash"></i>
+                        </button>
+
+                        <span class="input-focus-glow"></span>
+
+                    </div>
+
+
+                    <!-- Forgot Password -->
+                    <div class="forgot-row">
+
+                        <button
+                            type="button"
+                            class="text-button"
+                            id="forgotPasswordBtn"
+                        >
+                            Forgot Password?
+                        </button>
+
+                    </div>
+
+
+                    <!-- Login Button -->
+                    <button
+                        type="submit"
+                        class="primary-button"
+                        id="loginButton"
+                    >
+
+                        <span class="button-text">Login</span>
+
+                        <i class="fa-solid fa-arrow-right button-arrow"></i>
+
+                        <span class="button-shine"></span>
+
+                    </button>
+
+                    <p
+                        class="form-message"
+                        id="loginMessage"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                </form>
+
+
+                <!-- Divider -->
+                <div class="divider">
+
+                    <span></span>
+
+                    <p>OR CONTINUE WITH</p>
+
+                    <span></span>
+
+                </div>
+
+
+                <!-- Social Login -->
+                <div class="social-login">
+
+                    <button
+                        type="button"
+                        class="social-button google-button"
+                        aria-label="Continue with Google"
+                        data-provider="google"
+                    >
+                        <i class="fa-brands fa-google"></i>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="social-button apple-button"
+                        aria-label="Continue with Apple"
+                        data-provider="apple"
+                    >
+                        <i class="fa-brands fa-apple"></i>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="social-button facebook-button"
+                        aria-label="Continue with Facebook"
+                        data-provider="facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </button>
+
+                </div>
+
+
+                <!-- Register Link -->
+                <div class="switch-account">
+
+                    <p>Don't have an account?</p>
+
+                    <button
+                        type="button"
+                        class="text-button switch-button"
+                        id="showRegister"
+                    >
+                        Sign Up
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- REGISTER PANEL -->
+            <div class="form-panel" id="registerPanel">
+
+                <header class="form-header">
+
+                    <h1>Create Account</h1>
+
+                    <p>
+                        Join GOPI ONLINE CENTRE today
+                    </p>
+
+                </header>
+
+
+                <form id="registerForm" novalidate>
+
+                    <!-- Full Name -->
+                    <div class="input-shell">
+
+                        <div class="input-icon">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+
+                        <input
+                            type="text"
+                            id="registerName"
+                            name="full_name"
+                            placeholder="Full Name"
+                            autocomplete="name"
+                            aria-label="Full Name"
+                            required
+                        >
+
+                        <span class="input-focus-glow"></span>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="input-shell">
+
+                        <div class="input-icon">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            name="email"
+                            placeholder="Email Address"
+                            autocomplete="email"
+                            aria-label="Email Address"
+                            required
+                        >
+
+                        <span class="input-focus-glow"></span>
+
+                    </div>
+
+
+                    <!-- Mobile -->
+                    <div class="input-shell">
+
+                        <div class="input-icon">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+
+                        <input
+                            type="tel"
+                            id="registerPhone"
+                            name="phone"
+                            placeholder="10-digit Mobile Number"
+                            autocomplete="tel"
+                            inputmode="numeric"
+                            maxlength="10"
+                            aria-label="Mobile Number"
+                            required
+                        >
+
+                        <span class="input-focus-glow"></span>
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="input-shell password-shell">
+
+                        <div class="input-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            name="password"
+                            placeholder="Create Password"
+                            autocomplete="new-password"
+                            aria-label="Create Password"
+                            minlength="8"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="toggleRegisterPassword"
+                            aria-label="Show password"
+                            aria-pressed="false"
+                        >
+                            <i class="fa-regular fa-eye-slash"></i>
+                        </button>
+
+                        <span class="input-focus-glow"></span>
+
+                    </div>
+
+
+                    <!-- Register Button -->
+                    <button
+                        type="submit"
+                        class="primary-button"
+                        id="registerButton"
+                    >
+
+                        <span class="button-text">Create Account</span>
+
+                        <i class="fa-solid fa-arrow-right button-arrow"></i>
+
+                        <span class="button-shine"></span>
+
+                    </button>
+
+                    <p
+                        class="form-message"
+                        id="registerMessage"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                </form>
+
+
+                <!-- Back to Login -->
+                <div class="switch-account">
+
+                    <p>Already have an account?</p>
+
+                    <button
+                        type="button"
+                        class="text-button switch-button"
+                        id="showLogin"
+                    >
+                        Login
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer -->
+            <footer class="card-footer">
+
+                <span class="footer-dot"></span>
+
+                <p>Secure Access · Premium Experience</p>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

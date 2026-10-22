@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#f4f3ff">
+
+    <title>Dashboard | GOPI ONLINE SERVICE</title>
+
+    <link rel="stylesheet" href="./dashboard.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="dashboard-background" aria-hidden="true">
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+        <div class="glow glow-three"></div>
+    </div>
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+
+            <a href="./dashboard.html" class="brand">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <div class="brand-text">
+                    <span class="brand-title">GOPI ONLINE</span>
+                    <span class="brand-subtitle">SERVICE CENTER</span>
+                </div>
+            </a>
+
+            <div class="sidebar-label">MAIN MENU</div>
+
+            <nav class="sidebar-navigation" aria-label="Main navigation">
+
+                <a href="admin-login.html" class="admin-panel-btn">
+  <span>🛡️</span>
+  <span>ADMIN PANEL</span>
+  <span>↗</span>
+</a>
+
+                <button class="nav-item active" type="button" data-section="overview">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </button>
+
+                <button class="nav-item" type="button" data-section="profile">
+                    <i class="fa-solid fa-user"></i>
+                    <span>My Profile</span>
+                </button>
+
+                <button class="nav-item" type="button" data-section="notifications">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notifications</span>
+                    <span class="nav-badge" id="notificationBadge">0</span>
+                </button>
+
+                <button class="nav-item" type="button" data-section="services">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>All Services</span>
+                </button>
+
+                <button class="nav-item" type="button" data-section="orders">
+                    <i class="fa-solid fa-box"></i>
+                    <span>My Orders</span>
+                </button>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-help">
+                    <div class="help-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                    <h3>Need Help?</h3>
+
+                    <p>Contact us if you need assistance.</p>
+
+                    <a href="tel:9609047478" class="help-button">
+                        Contact Support
+                    </a>
+                </div>
+
+                <button class="logout-button" id="logoutButton" type="button">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Topbar -->
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        class="menu-toggle"
+                        id="menuToggle"
+                        type="button"
+                        aria-label="Toggle navigation"
+                        aria-controls="sidebar"
+                        aria-expanded="false"
+                    >
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+                        <p class="topbar-eyebrow">WELCOME BACK</p>
+                        <h1 id="pageTitle">Dashboard</h1>
+                    </div>
+
+                </div>
+
+                <div class="topbar-right">
+
+                    <button
+                        class="icon-button notification-trigger"
+                        type="button"
+                        data-section="notifications"
+                        aria-label="Open notifications"
+                    >
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <div class="topbar-divider"></div>
+
+                    <button
+                        class="topbar-profile"
+                        type="button"
+                        data-section="profile"
+                    >
+                        <div class="avatar" id="topbarAvatar">U</div>
+
+                        <div class="topbar-user-info">
+                            <strong id="topbarUserName">Loading...</strong>
+                            <span>Customer Account</span>
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down profile-chevron"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- Dynamic Content Sections -->
+            <div class="content-wrapper">
+
+                <!-- Overview -->
+                <section class="content-section active" id="overviewSection">
+
+                    <div class="welcome-banner">
+
+                        <div class="welcome-content">
+                            <span class="welcome-tag">
+                                <i class="fa-solid fa-sparkles"></i>
+                                YOUR DIGITAL SERVICE HUB
+                            </span>
+
+                            <h2>
+                                Hello, <span id="welcomeUserName">User</span>!
+                                <br>
+                                <span class="welcome-gradient">
+                                    What can we do for you today?
+                                </span>
+                            </h2>
+
+                            <p>
+                                Access your online services, track orders,
+                                and manage your account in one place.
+                            </p>
+
+                            <button
+                                class="primary-button"
+                                type="button"
+                                data-section="services"
+                            >
+                                Explore Services
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="welcome-illustration" aria-hidden="true">
+                            <div class="illustration-orbit orbit-one"></div>
+                            <div class="illustration-orbit orbit-two"></div>
+
+                            <div class="illustration-circle">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+
+                            <div class="floating-icon floating-icon-one">
+                                <i class="fa-solid fa-file-circle-check"></i>
+                            </div>
+
+                            <div class="floating-icon floating-icon-two">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+
+                            <div class="floating-icon floating-icon-three">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-eyebrow">YOUR ACCOUNT</span>
+                            <h2>Quick Overview</h2>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+
+                        <article class="stat-card stat-purple">
+                            <div class="stat-top">
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                </div>
+
+                                <span class="stat-label">AVAILABLE</span>
+                            </div>
+
+                            <h3 id="availableServicesCount">6</h3>
+                            <p>Available Services</p>
+
+                            <button
+                                class="stat-link"
+                                type="button"
+                                data-section="services"
+                            >
+                                Explore services
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </article>
+
+                        <article class="stat-card stat-blue">
+                            <div class="stat-top">
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-box-open"></i>
+                                </div>
+
+                                <span class="stat-label">YOUR ACTIVITY</span>
+                            </div>
+
+                            <h3 id="totalOrdersCount">0</h3>
+                            <p>Total Orders</p>
+
+                            <button
+                                class="stat-link"
+                                type="button"
+                                data-section="orders"
+                            >
+                                View your orders
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </article>
+
+                        <article class="stat-card stat-green">
+                            <div class="stat-top">
+                                <div class="stat-icon">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+
+                                <span class="stat-label">COMPLETED</span>
+                            </div>
+
+                            <h3 id="completedOrdersCount">0</h3>
+                            <p>Completed Orders</p>
+
+                            <button
+                                class="stat-link"
+                                type="button"
+                                data-section="orders"
+                            >
+                                Check order status
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </article>
+
+                    </div>
+
+                    <!-- Featured Services -->
+                    <div class="section-heading section-heading-spaced">
+
+                        <div>
+                            <span class="section-eyebrow">SIMPLE & CONVENIENT</span>
+                            <h2>Popular Services</h2>
+                        </div>
+
+                        <button
+                            class="text-button"
+                            type="button"
+                            data-section="services"
+                        >
+                            View all
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="services-grid" id="featuredServices">
+
+                        <article class="service-card">
+                            <div class="service-icon service-icon-purple">
+                                <i class="fa-solid fa-id-card"></i>
+                            </div>
+
+                            <h3>PAN Card</h3>
+                            <p>Online PAN card assistance.</p>
+
+                            <div class="service-card-bottom">
+                                <span class="service-price">₹50</span>
+
+                                <button
+                                    class="service-action"
+                                    type="button"
+                                    data-service="PAN Card"
+                                    aria-label="Select PAN Card service"
+                                >
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="service-card">
+                            <div class="service-icon service-icon-blue">
+                                <i class="fa-solid fa-address-card"></i>
+                            </div>
+
+                            <h3>Voter Card</h3>
+                            <p>Voter card application assistance.</p>
+
+                            <div class="service-card-bottom">
+                                <span class="service-price">₹50</span>
+
+                                <button
+                                    class="service-action"
+                                    type="button"
+                                    data-service="Voter Card"
+                                    aria-label="Select Voter Card service"
+                                >
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="service-card">
+                            <div class="service-icon service-icon-pink">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+
+                            <h3>Photo Print</h3>
+                            <p>Photo printing service.</p>
+
+                            <div class="service-card-bottom">
+                                <span class="service-price">From ₹50</span>
+
+                                <button
+                                    class="service-action"
+                                    type="button"
+                                    data-service="Photo Print"
+                                    aria-label="Select Photo Print service"
+                                >
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                            <article class="service-card">
+                            <div class="service-icon service-icon-orange">
+                                <i class="fa-solid fa-file-pen"></i>
+                            </div>
+
+                            <h3>Form Fill-up</h3>
+                            <p>Online form filling assistance.</p>
+
+                            <div class="service-card-bottom">
+                                <span class="service-price">₹50</span>
+
+                                <button
+                                    class="service-action"
+                                    type="button"
+                                    data-service="Form Fill-up"
+                                    aria-label="Select Form Fill-up service"
+                                >
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <!-- Recent Orders -->
+                    <div class="section-heading section-heading-spaced">
+
+                        <div>
+                            <span class="section-eyebrow">LATEST ACTIVITY</span>
+                            <h2>Recent Orders</h2>
+                        </div>
+
+                        <button
+                            class="text-button"
+                            type="button"
+                            data-section="orders"
+                        >
+                            View orders
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="table-card">
+                        <div class="table-responsive">
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ORDER ID</th>
+                                        <th>SERVICE</th>
+                                        <th>DATE</th>
+                                        <th>AMOUNT</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="recentOrdersBody">
+                                    <tr>
+                                        <td colspan="5" class="empty-table">
+                                            <i class="fa-solid fa-box-open"></i>
+                                            <span>No orders yet.</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- Profile -->
+                <section class="content-section" id="profileSection">
+
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-eyebrow">ACCOUNT SETTINGS</span>
+                            <h2>My Profile</h2>
+                            <p class="section-description">
+                                View your account information.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="profile-card">
+
+                        <div class="profile-cover"></div>
+
+                        <div class="profile-main">
+
+                            <div class="profile-avatar" id="profileAvatar">U</div>
+
+                            <div class="profile-heading">
+                                <h3 id="profileName">Loading...</h3>
+                                <p id="profileEmail">Loading account information...</p>
+                            </div>
+
+                            <span class="account-badge">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                Account
+                            </span>
+
+                        </div>
+
+                        <div class="profile-details">
+
+                            <div class="profile-detail">
+                                <span>FULL NAME</span>
+                                <strong id="detailName">—</strong>
+                            </div>
+
+                            <div class="profile-detail">
+                                <span>EMAIL ADDRESS</span>
+                                <strong id="detailEmail">—</strong>
+                            </div>
+
+                            <div class="profile-detail">
+                                <span>MOBILE NUMBER</span>
+                                <strong id="detailMobile">—</strong>
+                            </div>
+
+                            <div class="profile-detail">
+                                <span>ACCOUNT STATUS</span>
+                                <strong id="detailAccountStatus">Checking...</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- Notifications -->
+                <section class="content-section" id="notificationsSection">
+
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-eyebrow">STAY UPDATED</span>
+                            <h2>Notifications</h2>
+                            <p class="section-description">
+                                Important updates about your account and orders.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="notification-card" id="notificationsList">
+
+                        <div class="empty-state">
+                            <div class="empty-state-icon">
+                                <i class="fa-regular fa-bell"></i>
+                            </div>
+
+                            <h3>You're all caught up!</h3>
+
+                            <p>
+                                Your notifications will appear here when available.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- Services -->
+                <section class="content-section" id="servicesSection">
+
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-eyebrow">OUR SERVICES</span>
+                            <h2>All Services</h2>
+                            <p class="section-description">
+                                Choose a service to get started.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="service-notice">
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <p>
+                            Service requests will be available after the
+                            order system is connected.
+                        </p>
+                    </div>
+
+                    <div class="services-grid all-services-grid">
+
+                        <article class="service-card">
+                            <div class="service-icon service-icon-purple">
+                                <i class="fa-solid fa-id-card"></i>
+                            </div>
+
+                            <h3>PAN Card</h3>
+                            <p>Online PAN card assistance.</p>
+
+                            <div class="service-card-bottom">
+                                <span class="service-price">₹50</span>
+
+                                <button class="service-action" type="button"
+                                    data-service="PAN Card"
+                                    aria-label="Select PAN Card service">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="service-card">
+                            <div class="service-icon service-icon-blue">
+                                <i class="fa-solid fa-address-card"></i>
+                            </div>
+
+                            <h3>Voter Card</h3>
+                            <p>Voter card application assistance.</p>
+
+                            <div class="service-card-bottom">
+                                <span class="service-price">₹50</span>
+
+                                <button class="service-action" type="button"
+                                    data-service="Voter Card"
+                                    aria-label="Select Voter Card service">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="service-card">
+                            <div class="service-icon service-icon-green">
+                                <i class="fa-solid fa-car"></i>
+                            </div>
+
+                            <h3>Driving Licence</h3>
+                            <p>Driving licence form assistance.</p>
+
+                            <div class="service-card-bottom">
+                                <span class="service-price">Contact us</span>
+
+                                <button class="service-action" type="button"
+                                    data-service="Driving Licence"
+                                    aria-label="Select Driving Licence service">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="service-card">
+                            <div class="service-icon service-icon-pink">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+
+                            <h3>Photo Print</h3>
+                            <p>Photo printing service.</p>
+
+                            <div class="service-card-bottom">
+                                <span class="service-price">From ₹50</span>
+
+                                <button class="service-action" type="button"
+                                    data-service="Photo Print"
+                                    aria-label="Select Photo Print service">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="service-card">
+                            <div class="service-icon service-icon-orange">
+                                <i class="fa-solid fa-file-pen"></i>
+                            </div>
+
+                            <h3>Form Fill-up</h3>
+                            <p>Online form filling assistance.</p>
+
+                            <div class="service-card-bottom">
+                                <span class="service-price">₹50</span>
+
+                                <button class="service-action" type="button"
+                                    data-service="Form Fill-up"
+                                    aria-label="Select Form Fill-up service">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="service-card">
+                            <div class="service-icon service-icon-indigo">
+                                <i class="fa-solid fa-copy"></i>
+                            </div>
+
+                            <h3>Xerox</h3>
+                            <p>Document photocopy service.</p>
+
+                            <div class="service-card-bottom">
+                                <span class="service-price">Contact us</span>
+
+                                <button class="service-action" type="button"
+                                    data-service="Xerox"
+                                    aria-label="Select Xerox service">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- Orders -->
+                <section class="content-section" id="ordersSection">
+
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-eyebrow">ORDER MANAGEMENT</span>
+                            <h2>My Orders</h2>
+                            <p class="section-description">
+                                Track the progress of your service requests.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="orders-summary">
+
+                        <div class="orders-summary-card">
+                            <div class="summary-icon summary-icon-purple">
+                                <i class="fa-solid fa-box"></i>
+                            </div>
+
+                            <div>
+                                <span>Total Orders</span>
+                                <strong id="ordersPageTotal">0</strong>
+                            </div>
+                        </div>
+
+                        <div class="orders-summary-card">
+                            <div class="summary-icon summary-icon-green">
+                                <i class="fa-solid fa-check-circle"></i>
+                            </div>
+
+                            <div>
+                                <span>Completed</span>
+                                <strong id="ordersPageCompleted">0</strong>
+                            </div>
+                        </div>
+
+                        <div class="orders-summary-card">
+                            <div class="summary-icon summary-icon-orange">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+
+                            <div>
+                                <span>In Progress</span>
+                                <strong id="ordersPagePending">0</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="table-card">
+
+                        <div class="orders-table-heading">
+                            <div>
+                                <h3>Order History</h3>
+                                <p>Your recent service requests.</p>
+                            </div>
+
+                            <span class="order-count" id="ordersCountLabel">
+                                0 orders
+                            </span>
+                        </div>
+
+                        <div class="table-responsive">
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ORDER ID</th>
+                                        <th>SERVICE</th>
+                                        <th>DATE</th>
+                                        <th>AMOUNT</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="ordersTableBody">
+                                    <tr>
+                                        <td colspan="5" class="empty-table">
+                                            <i class="fa-solid fa-box-open"></i>
+                                            <span>No orders yet.</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- Footer -->
+                <footer class="dashboard-footer">
+                    <p>
+                        © <span id="currentYear"></span>
+                        GOPI ONLINE SERVICE. All rights reserved.
+                    </p>
+
+                    <span>
+                        <i class="fa-solid fa-heart"></i>
+                        Made for your convenience
+                    </span>
+                </footer>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Service Information Modal -->
+    <div
+        class="modal-backdrop"
+        id="serviceModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="serviceModalTitle"
+        hidden
+    >
+
+        <div class="modal-card">
+
+            <button
+                class="modal-close"
+                id="closeServiceModal"
+                type="button"
+                aria-label="Close dialog"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon">
+                <i class="fa-solid fa-layer-group"></i>
+            </div>
+
+            <span class="section-eyebrow">SERVICE INFORMATION</span>
+
+            <h2 id="serviceModalTitle">Service</h2>
+
+            <p id="serviceModalDescription">
+                Contact the service center to request this service.
+            </p>
+
+            <a href="tel:9609047478" class="primary-button modal-contact">
+                <i class="fa-solid fa-phone"></i>
+                Contact Support
+            </a>
+
+            <p class="modal-note">
+                Online ordering is not connected yet.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Dashboard JavaScript -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="./razorpay-config.js"></script>
+    <script type="module" src="./dashboard.js"></script>
+
+</body>
+</html>

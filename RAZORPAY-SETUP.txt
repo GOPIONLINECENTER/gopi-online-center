@@ -1,0 +1,36 @@
+GOPI ONLINE CENTER — Razorpay secure checkout setup
+
+IMPORTANT
+- The current project was a static browser site. Secure automatic verification requires a server. These API routes are intended for Vercel deployment; VS Code Live Server alone cannot run them.
+- This ZIP does not contain your Razorpay secrets and is NOT ready for live payments until configured and tested.
+- Do not send secrets in chat or put the Razorpay Key Secret / Supabase service-role key in any browser JS file or GitHub repository.
+
+1) SUPABASE DATABASE
+Open Supabase Dashboard > SQL Editor. Review and run SUPABASE-RAZORPAY-MIGRATION.sql. Back up first. It adds payment-specific columns and leaves order_status intact.
+Ensure your existing orders table has id, user_id, amount, service_name, order_status and that the signed-in customer is allowed to insert/select their own orders. The server uses the service-role key only in Vercel server functions.
+
+2) RAZORPAY TEST MODE
+In Razorpay Dashboard, switch to Test Mode. Open Settings > Website and app > API Keys and generate a Test Key ID and Test Key Secret. Do not use live credentials yet.
+
+3) DEPLOY ON VERCEL
+Import the existing project/repository to Vercel (or deploy the project folder using Vercel CLI). The `api` folder contains serverless endpoints. Configure these Environment Variables in Vercel Project Settings > Environment Variables:
+- RAZORPAY_KEY_ID = your Test Key ID
+- RAZORPAY_KEY_SECRET = your Test Key Secret
+- SUPABASE_URL = https://YOUR_PROJECT.supabase.co (the project's URL)
+- SUPABASE_SERVICE_ROLE_KEY = Supabase service_role/secret server key; keep private
+Redeploy after adding or changing environment variables.
+
+4) FRONT-END KEY ID
+Edit razorpay-config.js and set keyId to the same Test Key ID. The Key ID is public; NEVER put the Key Secret here.
+
+5) TEST END-TO-END
+Use a test customer account and a low-value test order in Razorpay Test Mode. Confirm successful checkout verifies and payment_status becomes paid in Supabase. Also test cancel/failure, wrong account, and duplicate attempts. Do not switch to Live Mode until all tests pass and Razorpay account activation/KYC is complete.
+
+6) LIVE MODE
+Only after successful tests, create Live API keys in Razorpay, update Vercel environment variables and razorpay-config.js, then redeploy. Consider configuring Razorpay webhooks for payment.captured/payment.failed and reconciliation. Never accept a browser success callback alone as proof of payment.
+
+IMPLEMENTED ROUTES
+POST /api/create-razorpay-order — authenticates the Supabase user, reads order amount from Supabase, creates Razorpay order server-side.
+POST /api/verify-razorpay-payment — validates signature and fetches payment from Razorpay, checks captured status/amount/currency, then updates payment fields.
+
+Note: no real transaction has been run by this code. Live payment acceptance depends on correct deployment, database schema/policies, Razorpay activation, and testing.
